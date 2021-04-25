@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component }  from 'react';
+import TODOLIST from './todolist';
 
-class TODO extends React.Component{
+class TODO extends Component{
     
     constructor(props){
         super(props);
@@ -36,11 +37,7 @@ class TODO extends React.Component{
         return (
             <div>
                 <h1>TODO Application</h1>
-                <ul>
-                    {this.state.items.map(item => (
-                        <li key={item.id}>{item.text}</li>
-                    ))}
-                </ul>
+                <TODOLIST items={this.state.items}/>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="id">Input Item</label>
                     <input id="id" onChange={this.handleChange} value={this.state.text}/>
