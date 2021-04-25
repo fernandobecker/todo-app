@@ -18,7 +18,8 @@ class TODO extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        if(this.state.text.lenght === 0) return;
+        
+        if(this.state.text.length === 0) return;
 
         const newItem = {
             text: this.state.text,
@@ -37,11 +38,11 @@ class TODO extends React.Component{
                 <h1>TODO Application</h1>
                 <ul>
                     {this.state.items.map(item => (
-                        <li key={item.id}>{item.value}</li>
+                        <li key={item.id}>{item.text}</li>
                     ))}
                 </ul>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlfor="id">Input Item</label>
+                    <label htmlFor="id">Input Item</label>
                     <input id="id" onChange={this.handleChange} value={this.state.text}/>
                     <button>Add</button>
                 </form>
